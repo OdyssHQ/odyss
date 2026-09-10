@@ -5,6 +5,7 @@ These rules apply to all work in this repository.
 ## Before Making Changes
 
 - Read the relevant product, roadmap, architecture, decisions, and task documentation. Start with [the architecture](docs/ARCHITECTURE.md) and [technical decisions](docs/DECISIONS.md) for technical work.
+- Before changing UI, read [the design system](docs/DESIGN_SYSTEM.md) and inspect the relevant approved images in `docs/design-references/`.
 - Inspect the existing code and configuration before editing.
 - Keep each task small, clearly scoped, and aligned with the current roadmap phase.
 - Do not expand the agreed v1 scope without explicit approval.

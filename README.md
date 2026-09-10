@@ -14,6 +14,7 @@ Odyss aims to give users full control over their personal media library through 
 - [Roadmap](docs/ROADMAP.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Logical Data Model](docs/DATA_MODEL.md)
+- [Design System](docs/DESIGN_SYSTEM.md)
 - [Technical Decisions](docs/DECISIONS.md)
 
 > 🚧 Work in progress.
