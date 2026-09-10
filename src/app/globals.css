@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--odyss-color-background);
+  --color-surface: var(--odyss-color-surface);
+  --color-surface-elevated: var(--odyss-color-surface-elevated);
+  --color-border: var(--odyss-color-border);
+  --color-foreground: var(--odyss-color-text-primary);
+  --color-secondary: var(--odyss-color-text-secondary);
+  --color-muted: var(--odyss-color-text-muted);
+  --color-brand: var(--odyss-color-brand-gold);
+  --font-sans: var(--odyss-font-sans);
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --odyss-color-background: #f7f8fa;
+  --odyss-color-surface: #ffffff;
+  --odyss-color-surface-elevated: #f0f2f5;
+  --odyss-color-border: #d9dee5;
+  --odyss-color-text-primary: #171a1f;
+  --odyss-color-text-secondary: #4b5563;
+  --odyss-color-text-muted: #687280;
+  --odyss-color-brand-gold: #d89a3d;
+  --odyss-color-focus: #8a5a13;
+  --odyss-color-disabled-surface: #eceff2;
+  --odyss-color-disabled-content: #7a8490;
+  --odyss-color-overlay: rgb(17 24 39 / 48%);
+  --odyss-font-sans: Arial, Helvetica, sans-serif;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --odyss-color-background: #0b0d10;
+  --odyss-color-surface: #11151a;
+  --odyss-color-surface-elevated: #171c22;
+  --odyss-color-border: #242b33;
+  --odyss-color-text-primary: #e9edf2;
+  --odyss-color-text-secondary: #b3bbc6;
+  --odyss-color-text-muted: #828c99;
+  --odyss-color-brand-gold: #d89a3d;
+  --odyss-color-focus: #f0b85a;
+  --odyss-color-disabled-surface: #15191e;
+  --odyss-color-disabled-content: #66717d;
+  --odyss-color-overlay: rgb(0 0 0 / 68%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --odyss-color-background: #0b0d10;
+    --odyss-color-surface: #11151a;
+    --odyss-color-surface-elevated: #171c22;
+    --odyss-color-border: #242b33;
+    --odyss-color-text-primary: #e9edf2;
+    --odyss-color-text-secondary: #b3bbc6;
+    --odyss-color-text-muted: #828c99;
+    --odyss-color-brand-gold: #d89a3d;
+    --odyss-color-focus: #f0b85a;
+    --odyss-color-disabled-surface: #15191e;
+    --odyss-color-disabled-content: #66717d;
+    --odyss-color-overlay: rgb(0 0 0 / 68%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--odyss-color-background);
+  color: var(--odyss-color-text-primary);
+  font-family: var(--odyss-font-sans);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--odyss-color-focus);
+  outline-offset: 3px;
+}
