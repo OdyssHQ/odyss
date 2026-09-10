@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the approved technical foundation for Odyss v1. It complements the [product specification](PRODUCT_SPEC.md), [roadmap](ROADMAP.md), and individual [technical decisions](DECISIONS.md).
+This document defines the approved technical foundation for Odyss v1. It complements the [product specification](PRODUCT_SPEC.md), [roadmap](ROADMAP.md), [logical data model](DATA_MODEL.md), and individual [technical decisions](DECISIONS.md).
 
 ## Architecture Style
 
@@ -73,7 +73,7 @@ This stack is approved for future implementation. This document does not scaffol
 - **Personal library:** membership, organization, display preferences, and library queries.
 - **Movie tracking:** movie statuses, ratings, dates, notes, favorites, and rewatch history.
 - **Series, season, and episode tracking:** series status and granular progress, including optional season logging.
-- **Activity:** canonical records of relevant personal library and tracking changes.
+- **Activity:** immutable records of relevant personal library and tracking changes, without becoming the canonical source for current state.
 - **Dashboard and statistics:** projections and calculations derived from canonical tracking and activity data.
 - **User preferences:** theme, library presentation, and other personal settings.
 - **Import/export and backup:** bounded data portability and recovery workflows approved for v1.
@@ -96,6 +96,8 @@ Odyss owns and preserves all personal tracking data, including:
 - Activity
 
 Movies, series, seasons, and episodes use internal Odyss IDs. External identifiers, including TMDB and IMDb IDs, are stored as provider mappings associated with internal entities and are never primary identifiers.
+
+Private manual media items, seasons, and episodes carry explicit, matching user ownership. They cannot receive external provider mappings in v1. Database constraints enforce ownership consistency, domain services authorize every operation, and optional row-level security may add defense in depth but cannot be the only protection.
 
 The personal library and activity records are the canonical sources for dashboard results. Dashboard statistics are calculated as projections or queries; duplicate counters must not become an independently maintained source of truth.
 

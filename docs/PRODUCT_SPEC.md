@@ -40,6 +40,12 @@ Users can track:
 
 Personal tracking records belong to the user and remain distinct from shared media metadata.
 
+Season entries and episode progress require the parent series to be in the same user's library. If a user records progress before adding that series, Odyss must add the parent series first or create the library entry and progress together in one transaction.
+
+Favorites are limited to media already in the user's library. Removing a library entry also removes its favorite.
+
+Library and season statuses are explicit user-controlled workflow states and may differ from episode-derived progress. Dashboard status totals use the explicit library status, while season and series completion percentages use episode progress. Odyss may suggest a status change but does not silently change status in v1, and changing status never deletes episode progress.
+
 ### Dashboard
 
 The dashboard summarizes real data from the user's library and activity. It contains:
@@ -73,7 +79,7 @@ Users can discover and add media through:
 - **Add with Details:** set available tracking details while adding an item
 - **Manual Entry:** create an entry when normal search metadata is unavailable or unsuitable
 
-TMDB is the initial development metadata provider behind a provider-independent boundary. The production provider remains undecided until commercial terms are resolved. Search results and manually entered items must ultimately use internal Odyss IDs.
+TMDB is the initial development metadata provider behind a provider-independent boundary. The production provider remains undecided until commercial terms are resolved. Search results and manually entered items must ultimately use internal Odyss IDs. Private manual media has no external provider mappings in v1; promotion, merging, and deduplication of manual media are deferred.
 
 ### Movie Detail
 
