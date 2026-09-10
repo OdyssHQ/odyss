@@ -73,7 +73,7 @@ Users can discover and add media through:
 - **Add with Details:** set available tracking details while adding an item
 - **Manual Entry:** create an entry when normal search metadata is unavailable or unsuitable
 
-The metadata provider is intentionally undecided. Search results and manually entered items must ultimately use internal Odyss IDs.
+TMDB is the initial development metadata provider behind a provider-independent boundary. The production provider remains undecided until commercial terms are resolved. Search results and manually entered items must ultimately use internal Odyss IDs.
 
 ### Movie Detail
 
